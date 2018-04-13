@@ -5,8 +5,6 @@ import sys
 import sqlite3
 import plotly.plotly as py
 import plotly.graph_objs as go
-#QUESTIONS:
-#1. Ask about the commands for plotly
 
 num = 0
 DBNAME = 'Imdb.sql'
