@@ -6,14 +6,7 @@ import sqlite3
 import plotly.plotly as py
 import plotly.graph_objs as go
 #QUESTIONS:
-#1. Does my project add up to enough points?
-#2. Test cases: How should i test for this ---> and that your data processing produces the results and data structures you need for presentation.
-#3. Check with Matt to make sure that data processing is okay now
 #4. What do we need to include in the ReadMe file?
-#5. Problems with GitHub wont let me push changes
-#6. Choosing Presentation options? What does this mean? is the way i have it currently okay?
-#7. How to create the requirements.txt
-#8. I am not opening my cache to form my data is this okay? i used my class but i get all the information from my cache
 
 num = 0
 DBNAME = 'Imdb.sql'
