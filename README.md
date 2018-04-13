@@ -1,6 +1,6 @@
 # SI206FinalProject
 MAIN PURPOSE OF CODE:
-The main purpose of this program is to scrape/crawl the IMDB website which gathers information on theaters 5- 30 miles away from a zip code entered. The program will also gather a list of movies playing at the theater selected from the IMDB website. The URL to the IMDB website is http://www.imdb.com.  The information about these movies and theaters will be stored in two different cache files and I will use two classes (Theater and Movie) to reference information and create the SQL database. I create a variety of different charts on plotly to demonstrate the information gathered.
+The main purpose of this program is to scrape/crawl the IMDB website which gathers information on theaters 5- 30 miles away from a zip code entered. The program will also gather a list of movies playing at the theater selected from the IMDB website. The URL to the IMDB website is http://www.imdb.com.  The information about these movies and theaters will be stored in two different cache files and I will use two classes (Theater and Movie) to reference information and create the SQL database. Their will be two tables in SQL database: Theaters and Movies. The relation between the two graphs is MoviesPlaying. I create a variety of different charts on plotly to demonstrate the information gathered.
 
 
 DATA SOURCES:
