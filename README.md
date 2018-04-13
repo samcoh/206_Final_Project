@@ -8,7 +8,7 @@ DATA SOURCES:
 
 
 INFORMATION NEEDED TO RUN PROGRAM:
-  Plotly is used in this program. Read these instructions to install plotly to run this program: https://plot.ly/python/getting-started/.
+  Plotly is used in this program. Read these instructions to install plotly to run this program: https://plot.ly/python/getting-started/. Create a secret.py file with your plotly credentials. 
 
 DESCRIPTION (code structure, names of significant data processing functions, and class definitions. If there are large data structures (e.g., lists, dictionaries) that you create to organize your data for presentation, briefly describe them.):
 
