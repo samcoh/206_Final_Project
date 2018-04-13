@@ -8,7 +8,7 @@ DATA SOURCES:
 
 
 INFORMATION NEEDED TO RUN PROGRAM:
-  Plotly is used in this program. Read these instructions to install plotly to run this program: https://plot.ly/python/getting-started/. Create a secret.py file with your plotly credentials. 
+  Plotly is used in this program. Read these instructions to install plotly to run this program: https://plot.ly/python/getting-started/. Create a secret.py file with your plotly credentials.
 
 DESCRIPTION (code structure, names of significant data processing functions, and class definitions. If there are large data structures (e.g., lists, dictionaries) that you create to organize your data for presentation, briefly describe them.):
 
@@ -30,7 +30,8 @@ GRAPHS CREATED IN PROGRAM:
 USER GUIDE (how to run the program and how to choose presentation options):
 
 Interactive Component:
-zip <zipcode>:	Is available at anytime. It lists all theaters between 5 and 30 miles away from the zipcode entered. Will show the user 10 theaters by default. If there are more than 10 theaters for the zipcode then the user will be asked if they would like to see more.
+
+zip <zipcode>:Is available at anytime. It lists all theaters between 5 and 30 miles away from the zipcode entered. Will show the user 10 theaters by default. If there are more than 10 theaters for the zipcode then the user will be asked if they would like to see more.
 A 5 digit zip code
 
 theater <result_number>:	Available only if there is an active result set (a list of theaters near a zipcode specified). It lists all movies showing at the theater selected.	An integer 1-len (result_set_size)
