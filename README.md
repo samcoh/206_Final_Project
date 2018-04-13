@@ -4,7 +4,7 @@ The main purpose of this program is to scrape/crawl the IMDB website which gathe
 
 
 DATA SOURCES:
-  The data sources I use for this program is IMDB http://www.imdb.com. I crawl a variety of different pages on this website to collect all the information I need to run the program.
+  The data sources I use for this program is IMDB http://www.imdb.com. I crawl a variety of different pages on this website to collect all the information I need to run the program. Also make sure you have the packages in requirement.txt so you are able to run the program.
 
 
 INFORMATION NEEDED TO RUN PROGRAM:

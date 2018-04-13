@@ -6,7 +6,7 @@ import sqlite3
 import plotly.plotly as py
 import plotly.graph_objs as go
 #QUESTIONS:
-#4. What do we need to include in the ReadMe file?
+#1. Ask about the commands for plotly
 
 num = 0
 DBNAME = 'Imdb.sql'
@@ -94,11 +94,6 @@ class Movie():
         self.movie_worldwide_gross = cumulative
     def __str__(self):
         return '''{}({})\n\tRating: {} \n\tMinutes: {} \n\tGenre: {} \n\tDirected by: {} \n\tStars: {}\n\tDescription:\n\t\t {}\n\tMONEY:\n\t\t Budget: {}\n\t\t Gross Profit in the USA: {}\n\t\t Opening Weekend in the USA: {}\n\t\t Cumulative Worldwide Gross: {}'''.format(self.movie_name,self.movie_year,self.movie_rating,self.movie_time,self.movie_genre,self.movie_directors,self.movie_stars,self.movie_descrip,self.movie_budget,self.movie_gross_usa,self.movie_opening_weekend_usa, self.movie_worldwide_gross)
-#QUESTIONS:
-#1. list_movietheaters: ask about not cachining the list of movies because they update everyday
-#caching
-#can cache list_movietheaters
-#movie theaters within 5,10,20,and 30 miles away
 
 def list_movietheaters(zip_code):
     zip_code = zip_code
@@ -293,7 +288,7 @@ def movie_information(theater_class_object):
 # for x in mov:
 #     print(x.movie_name)
 
-#making the database:
+#MAKING THE DATABASE:
 def init_db(db_name):
     conn = sqlite3.connect(db_name)
     cur = conn.cursor()
@@ -937,40 +932,6 @@ def interactive():
         if response == "exit":
             print("Goodbye!")
         continue
-
-
-#table 1: theaters
-#table 2: movies
-#theaters column movies contain a string ('1,2,3,4,5,6,7,')
-#theaters playing this list of movies
-#str.split(',') get movie info for all those
-#movies tables do need any information on what movies are playing
-#movies can delete everytime it runs keep the theater cache
-#print theaters near zipcode
-#then they pick a theater number and tells the movies
-#they can pick a movie number and it tells the movies
-#pie chart showing the ratings for the movie
-#release month (how long specific movies are in theaters) --> time line graph (or you can do gross sales ---> distribution of gross sales per movie per theater)
-#-------------------------------------------------------
-
-#table 1:movies
-#join on movie titles or movie directors
-#table 2: theaters and zip codes column for list of movies
-#theaters table: id, zip code, address, movies list
-#just keep adding them to the database
-#can just use the cache data
-
-
-#tables all the movie information
-#join on the movies playing at that theater
-
-#movie theaters id
-#table 1: theaters, autoincriment unique id
-#cant multiple theaters show the same movie
-#movies: column with theater id
-#movie id as a foreign key in the theater table
-#beautiful soup documentation
-
 
 #interactive part
 if __name__ == '__main__':

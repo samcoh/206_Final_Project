@@ -149,8 +149,10 @@ class TestDataProcessing(unittest.TestCase):
             FROM Theaters
             WHERE Name = "Goodrich Quality 16" AND StreetAddress = "3686 Jackson Road"
         '''
-        results = cur.execute(sql).fetchall()
-        self.assertEqual(results,[("1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",)])
+        cur.execute(sql)
+        for x in cur:
+            results = x
+        self.assertEqual(results,("1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",))
 
         statement = '''
             SELECT Budget,CumulativeWorldwideGross,Name
