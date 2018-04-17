@@ -596,7 +596,7 @@ def gross_usa_vs_cumulativegross(movie_object):
                 #percent_us = y[1].split(',')/int(y[0].split(',').join()) #U.S percentage
                 world = y[1].split(',')
                 usa = y[0].split(',')
-                percent_us= int("".join(usa))/int("".join(world))
+                percent_us = int("".join(usa))/int("".join(world))
                 percent_world = 1 - percent_us
         fig = {
             'data': [{'labels': ["% Revenue From the United States", "% Revenue From the Rest of the World"],
@@ -771,6 +771,11 @@ def interactive():
     response = input('Please type in the zipcode command (or "exit" to quit): ')
     while response != 'exit':
         split_response = response.split()
+        if len(split_response) == 0:
+            response = input('Please type in a valid command (or "exit" to quit): ')
+            if response == "exit":
+                print("Goodbye!")
+            continue
         if split_response[0]== "zip" and len(split_response[1]) == 5:
             try:
                 int(split_response[1])
