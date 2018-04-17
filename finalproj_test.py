@@ -2,6 +2,13 @@ from finalproj import *
 import unittest
 import sqlite3
 
+
+init_db(DBNAME)
+movie_theater = list_movietheaters("60022")[0]
+#result = list_movietheaters("60022")[0]
+mov = movie_information(movie_theater)[0]
+movies = list_movietheaters("48104")
+move = movie_information(movies[0])
 #Please note: these tests only work if the data is coming from the cache.
 #If the cache is deleted this information will be updated and the data represented in these tests will be incorrect.
 class TestClasses(unittest.TestCase):
@@ -40,14 +47,14 @@ class TestClasses(unittest.TestCase):
         self.assertIsInstance(m1, Movie)
 class TestHTMLFunctions(unittest.TestCase):
     def test_list_movietheaters(self):
-        result = list_movietheaters("60022")[0]
+        #result = list_movietheaters("60022")[0]
 
-        self.assertEqual(result.theater_name, "AMC Northbrook Court 14")
-        self.assertEqual(result.street_address,  "1525 Lake Cook Road")
-        self.assertEqual(result.city, "Northbrook")
-        self.assertEqual(result.state, "IL")
-        self.assertEqual(result.zip, "60062")
-        self.assertEqual(result.list_movies,[
+        self.assertEqual(movie_theater.theater_name, "AMC Northbrook Court 14")
+        self.assertEqual(movie_theater.street_address,  "1525 Lake Cook Road")
+        self.assertEqual(movie_theater.city, "Northbrook")
+        self.assertEqual(movie_theater.state, "IL")
+        self.assertEqual(movie_theater.zip, "60062")
+        self.assertEqual(movie_theater.list_movies,[
         'A Quiet Place ', 'A Wrinkle in Time ', 'Black Panther ', 'Blockers ',
          'Chappaquiddick ', 'Game Night ', "God's Not Dead: A Light in Darkness ",
          'Isle of Dogs ', 'Love, Simon ', 'Midnight Sun ', 'Pacific Rim: Uprising ',
@@ -56,8 +63,8 @@ class TestHTMLFunctions(unittest.TestCase):
             'The Miracle Season ', 'Tomb Raider ', 'Acrimony ', 'Unsane '
             ])
     def test_movie_information(self):
-        result = list_movietheaters("60022")[0]
-        mov = movie_information(result)[0]
+        # result = list_movietheaters("60022")[0]
+        # mov = movie_information(result)[0]
         self.assertEqual(mov.movie_name, "A Quiet Place ")
         self.assertEqual(mov.movie_genre, "Drama,Horror,Thriller")
         self.assertEqual(mov.movie_stars, "Emily Blunt,John Krasinski,Noah Jupe,Millicent Simmonds")
@@ -75,15 +82,15 @@ class TestDatabase(unittest.TestCase):
     def test_Theaters_table(self):
         conn = sqlite3.connect(DBNAME)
         cur = conn.cursor()
-        init_db(DBNAME)
-        movies = list_movietheaters("48104")
-        mov = movie_information(movies[0])
+        #init_db(DBNAME)
+        # movies = list_movietheaters("48104")
+        # mov = movie_information(movies[0])
 
         sql = 'SELECT Name FROM Theaters'
         results = cur.execute(sql)
         result_list = results.fetchall()
         self.assertIn(('Goodrich Quality 16',), result_list)
-        self.assertEqual(len(result_list), 29)
+        self.assertEqual(len(result_list), 79)
 
         sql = '''
             SELECT Id, EnteredZipCode, Name,
@@ -152,7 +159,7 @@ class TestDataProcessing(unittest.TestCase):
         cur.execute(sql)
         for x in cur:
             results = x
-        self.assertEqual(results,("1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",))
+        self.assertEqual(results,("1,2,23,3,4,5,24,6,25,8,9,10,11,12,14,15,16,17,20,21,22",))
 
         statement = '''
             SELECT Budget,CumulativeWorldwideGross,Name
